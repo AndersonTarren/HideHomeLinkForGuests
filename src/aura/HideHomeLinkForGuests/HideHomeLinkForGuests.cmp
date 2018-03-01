@@ -1,0 +1,12 @@
+<aura:component description="HideHomeLinkForGuests" implements="forceCommunity:availableForAllPageTypes" access="global">
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+    <aura:attribute name="hideHome" type="Boolean" default="false"/>
+
+    <aura:if isTrue="{!v.hideHome}">
+        <style>
+            .forceCommunityGlobalNavigation ul.comm-navigation__list li:first-child{
+                display:none;
+            }
+        </style>
+    </aura:if>
+</aura:component>
